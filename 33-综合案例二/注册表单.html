@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>注册信息</h1>
+    <form action="">
+        <hr>
+        <h3>个人信息</h3>
+        <label>姓名：</label>
+        <input type="text" placeholder="请输入姓名">
+        <br>
+        <label>密码：</label>
+        <input type="password" placeholder="请输入密码">
+        <br>
+        <label>确认密码：</label>
+        <input type="password" placeholder="请再次输入密码">
+        <br>
+        <label>联系方式：</label>
+        <input type="text" placeholder="请输入联系方式">
+        <br>
+        <label>性别：</label>
+        <label>
+            <input type="radio" name="sex" checked>男
+        </label>
+        <label>
+            <input type="radio" name="sex">女
+        </label>
+        <br>
+        <label>意向城市：</label>
+        <select>
+            <option>请选择意向城市</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>广州</option>
+            <option>深圳</option>
+        </select>
+        <hr>
+        <h3>教育经历</h3>
+        <label>最高学历：</label>
+        <select>
+            <option>请选择最高学历</option>
+            <option>博士</option>
+            <option>硕士</option>
+            <option>本科</option>
+            <option>专科</option>
+        </select>
+        <br>
+        <label>毕业院校：</label>
+        <input type="text" placeholder="请输入毕业院校">
+        <br>
+        <label>所读专业：</label>
+        <input type="text" placeholder="请输入所读专业">
+        <br>
+        <label>在校时间：</label>
+        <input type="date"><span>--</span><input type="date">
+        <hr>
+        <h3>工作经历</h3>
+        <label>公司名称：</label>
+        <input type="text" placeholder="请输入公司名称">
+        <br>
+        <label>工作职位：</label>
+        <input type="text" placeholder="请输入工作职位">
+        <br>
+        <label>工作内容：</label>
+        <textarea placeholder="请输入工作内容" cols="60" rows="6"></textarea>
+        <br>
+        <label>工作时间：</label>
+        <input type="date"><span>--</span><input type="date">
+        <hr>
+        <label>
+            <input type="checkbox">我已阅读并同意《用户注册协议》
+        </label>
+        <ul>
+            <li>
+                <a href="#">用户注册协议</a>
+            </li>
+            <li>
+                <a href="#">隐私政策</a>
+            </li>
+        </ul>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+    </form>
+</body>
+</html>
