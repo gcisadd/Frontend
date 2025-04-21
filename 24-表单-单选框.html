@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" value="男" checked>男
+    <input type="radio" name="gender" value="女">女
+    <input type="radio" name="gender" value="其他">其他
+    <!-- 如果选中其他，则让用户输入其他 -->
+    <!-- 选中其他才显示输入框，否则隐藏 -->
+    <input type="text" name="other" id="other" placeholder="请输入你的性别" style="display: none;">
+    <script>
+        // 为所有性别单选框添加事件监听
+        document.querySelectorAll('input[name="gender"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                // 检查是否选中"其他"选项
+                if (this.value === '其他') {
+                    document.querySelector('input[name="other"]').style.display = 'block';
+                } else {
+                    document.querySelector('input[name="other"]').style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
