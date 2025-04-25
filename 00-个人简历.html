@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <!-- 设置网站图标 -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z'/%3E%3C/svg%3E" type="image/svg+xml">
+    <style>
+        /* 全局样式 */
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: blue;
+        }
+        /* 头部区域样式 */
+        .header {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .header-right {
+            margin-left: 50px;
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 标题样式 */
+        .resume-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .resume-title h1 {
+            margin: 0;
+            margin-right: 30px;
+            color: #333;
+        }
+
+        .job-intention {
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* 基本信息样式 */
+        .basic-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            color: #444;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        .info-item i {
+            margin-right: 8px;
+            color: #666;
+            width: 20px;
+        }
+
+        /* 分割线样式 */
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        /* 其他信息区域样式 */
+        .section {
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info {
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* 教育背景和工作经验的布局 */
+        .info .info-item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .info .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 主修课程样式 */
+        .info-item.full-width {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .info-item.full-width strong {
+            margin-bottom: 8px;
+        }
+
+        /* 加粗文本样式 */
+        .info-item strong {
+            color: #333;
+            font-weight: 600;
+            margin-right: 8px;
+            white-space: nowrap;
+        }
+
+        p {
+            margin: 0;
+            text-indent: 5em; /* 左缩进 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <div class="header-left">
+            <!-- 标题和求职意向 -->
+            <div class="resume-title">
+                <h1>个人简历</h1>
+                <span class="job-intention">求职意向：产品经理</span>
+            </div>
+            
+            <!-- 基本信息 -->
+            <div class="basic-info">
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    <span><strong>姓名：</strong>龚驰</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span><strong>年龄：</strong>21岁</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span><strong>电话：</strong>15113620975</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>
+                        <strong>邮箱：</strong>
+                        <a href="mailto:2022155026@email.szu.edu.cn" target="_blank">2022155026@email.szu.edu.cn</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <img src="./images/证件照四.jpg" alt="个人头像" class="avatar" title="我是龚驰">
+        </div>
+    </div>
+    <hr>
+    <!-- 教育背景 -->
+    <div class="section">
+        <h2>教育背景</h2>
+        <div class="info">
+            <div class="info-item">
+                <span><strong>学校：</strong>深圳大学</span>
+                <span><strong>专业：</strong>软件工程（腾班）</span>
+                <span><strong>时间：</strong>2022.09-2026.06</span>
+            </div>
+            <div class="info-item full-width">
+                <span><strong>主修课程：</strong>C/C++，算法设计与分析，软件工程，计算机系统，机器学习，数据库系统，操作系统，计算机视觉，计算机图形学，计算机网络，网络安全等。</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- 工作经验 -->
+    <div class="section">
+        <h2>工作经验</h2>
+        <div class="info">
+            <div class="info-item">
+                <span><strong>公司：</strong>深圳市山君不离科技有限公司</span>
+                <span><strong>职位：</strong>软件开发</span>
+                <span><strong>时间：</strong>2025.02-2025.04</span>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>工作描述：</strong>
+                    listeningo.com英语精听网站的开发
+                </span>
+            </div>
+            <div class="info-item full-width">
+                    <strong>工作职责：</strong>
+                        <p>1、参与系统架构设计，制定技术方案和开发计划。</p>
+                        <p>2、根据设计文档和项目需求，编写高质量、可维护的代码。</p>
+                        <p>3、分析竞品，将其优势融入自家产品，实现取长补短，助力产品优化。</p>
+                        <p>4、修复代码中的缺陷和漏洞，确保系统的稳定性和安全性。</p>
+                        <p>5、使用Git工具协作开发，解决开发中的技术问题，推动项目进展。</p>
+                        <p>6、进行前端数据埋点，分析用户行为，优化产品体验。</p>
+                        <p>7、与团队成员协作，负责网页的前端开发。</p>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>技术栈：</strong>
+                    React 框架，前端三件套（HTML, CSS, JavaScript）
+                </span>
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-item">
+                <span><strong>公司：</strong>深信服科技股份有限公司</span>
+                <span><strong>职位：</strong>前端开发</span>
+                <span><strong>时间：</strong>2025.05-至今</span>
+            </div>
+            <div class="info-item full-width">
+                <strong>工作职责：</strong>
+                <p>1、负责业务的开发，包括不限于PC、移动端、客户端等中后台业务的开发。</p>
+                <p>2、高质量完成代码编写确保符合团队规范，保障业务成功。</p>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="section">
+        <h2>兼职经历</h2>
+        <div class="info">
+            <div class="info-item">
+                <span><strong>公司：</strong>深圳市马上启诚留学服务有限公司</span>
+                <span><strong>职位：</strong>产品运营</span>
+                <span><strong>时间：</strong>2025.04-2025.07</span>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>工作描述：</strong>
+                    小红书等社交平台内容运营
+                </span>
+            </div>
+            <div class="info-item full-width">
+                <strong>工作职责：</strong>
+                <p>1、负责小红书等社交平台的内容运营，包括内容策划、发布、推广等。</p>
+                <p>2、分析用户需求，制定内容策略，提高用户粘性和活跃度。</p>
+                <p>3、与团队成员协作，负责内容的质量控制和优化。</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h2>项目经历</h2>
+        <div class="info">
+            <div class="info-item">
+                <span>
+                    <strong>项目名称：</strong>
+                    个人财务管理系统
+                </span>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>项目描述：</strong>
+                    设计并推出一个用户友好的个人财务管理 Web 应用
+                </span>
+            </div>
+            <div class="info-item full-width">
+                <strong>项目职责：</strong>
+                <p>1、需求分析：进行调研，明确系统需求，确保功能设计符合用户期望。</p>
+                <p>2、系统设计：设计系统架构和数据库结构，确保系统可扩展性和稳定性。</p>
+                <p>3、项目管理：制定项目计划，协调团队成员，确保项目按时推进。</p>
+                <p>4、原型设计：使用"墨刀"进行高保真原型设计，确保界面直观易用。</p>
+                <p>5、测试与优化：制定测试计划，进行功能和性能测试，确保系统质量。</p>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>技术栈：</strong>
+                    HTML, CSS, JavaScript (前端); PHP, MySQL (后端)
+                </span>
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-item">
+                <span>
+                    <strong>项目名称：</strong>
+                    校园活动征召平台
+                </span>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>项目描述：</strong>
+                    开发一个校园活动征召平台，用于管理校园活动的发布、报名、审核及结果查询等功能
+                </span>
+            </div>
+            <div class="info-item full-width">
+                <strong>项目职责：</strong>
+                <p>1、负责前端页面的开发和设计，实现用户界面的交互功能。</p>
+                <p>2、负责后端逻辑的实现，包括用户管理、活动管理、报名管理等功能的开发。</p>
+                <p>3、使用 PowerDesigner 完成 E-R 图设计，创建包含多个实体和关系的数据库。</p>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>技术栈：</strong>
+                    HTML, CSS, JavaScript (前端); PHP, MySQL (后端)
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h2>自我评价</h2>
+        <div class="info">
+            <div class="info-item">
+                <span>
+                    <strong>自我评价：</strong>
+                    我对工作充满热情，始终保持高度的责任感，确保任务高质量完成。始终保持对新技术和行业趋势的关注，提升专业能力。能够快速适应新环境和新挑战，具备较强的学习能力和抗压能力。期待在未来的工作中，能够将我的技术经验和项目管理能力应用到实际项目中，帮助团队和公司实现更大的成功。
+                </span>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>个人链接：</strong>
+                    <a href="https://github.com/gcisadd" target="_blank">https://github.com/gcisadd</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <h2>奖项证书</h2>
+        <div class="info">
+            <div class="info-item">
+                <span>
+                    <strong>奖项：</strong>
+                    广东省中学生地球科学竞赛二等奖
+                </span>
+            </div>
+            <div class="info-item">
+                <span>
+                    <strong>证书：</strong>
+                    全国英语六级、全国英语四级、国家普通话二乙、机动车驾驶证
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
