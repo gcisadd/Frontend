@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>功能介绍四宫格</title>
+    <!-- Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 容器整体样式 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 900px;
+            margin: 40px auto;
+            background: #fafbfc;
+            border: 1px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 40px 30px;
+        }
+        /* 单个功能块 */
+        .feature-item {
+            flex: 0 0 45%;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            min-width: 350px;
+        }
+        /* 图标样式 */
+        .feature-icon {
+            font-size: 40px;
+            color: #2196F3;
+            margin-right: 24px;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+        /* 标题 */
+        .feature-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        /* 描述 */
+        .feature-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+        /* 让最后一行对齐 */
+        .feature-item:nth-child(3), .feature-item:nth-child(4) {
+            margin-bottom: 0;
+        }
+        /* 响应式（可选） */
+        @media (max-width: 1000px) {
+            .feature-grid { width: 98vw; padding: 20px 5px;}
+            .feature-item { min-width: 200px; }
+        }
+        @media (max-width: 700px) {
+            .feature-grid { flex-direction: column; }
+            .feature-item { flex: 1 1 100%; margin-bottom: 30px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="feature-grid">
+        <!-- 一键发布多端 -->
+        <div class="feature-item">
+            <i class="fas fa-rocket feature-icon"></i>
+            <div>
+                <div class="feature-title">一键发布多端</div>
+                <div class="feature-desc">发布视频到抖音短视频、西瓜视频及今日头条</div>
+            </div>
+        </div>
+        <!-- 管理视频内容 -->
+        <div class="feature-item">
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <div>
+                <div class="feature-title">管理视频内容</div>
+                <div class="feature-desc">支持修改已发布稿件状态和实时查询视频审核状态</div>
+            </div>
+        </div>
+        <!-- 发布携带组件 -->
+        <div class="feature-item">
+            <i class="fas fa-paper-plane feature-icon"></i>
+            <div>
+                <div class="feature-title">发布携带组件</div>
+                <div class="feature-desc">支持分享内容携带小程序、地理位置信息等组件，扩展内容及突出地域性</div>
+            </div>
+        </div>
+        <!-- 数据评估分析 -->
+        <div class="feature-item">
+            <i class="fas fa-chart-bar feature-icon"></i>
+            <div>
+                <div class="feature-title">数据评估分析</div>
+                <div class="feature-desc">获取视频在对应产品内的数据表现、获取抖音热度、及时进行表现评估</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
