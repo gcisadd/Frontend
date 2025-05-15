@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+        .banner {
+            margin: 100px auto;
+            width: 564px;
+            height: 315px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s;
+            /* background-color: pink; */
+        }
+        .banner:hover {
+            scale: 1.1;
+        }
+        .banner ul {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .banner ul li {
+            flex-shrink: 0;
+        }
+        /* 图片 */
+        .banner img {
+            width: 564px;
+            border-radius: 12px;
+            vertical-align: middle;
+        }
+        /* 箭头 */
+        .banner .prev,
+        .banner .next {
+            display: none;
+            width: 20px;
+            height: 30px;
+            top: 50%;
+            transform: translateY(-50%) ;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+        }
+        .banner:hover .prev,
+        .banner:hover .next {
+            display: block;
+        }
+        .banner .prev {
+            border-radius: 0 15px 15px 0;
+            left: 0;
+        }
+        .banner .next {
+            border-radius: 15px 0 0 15px;
+            right: 0;
+        }
+        /* 圆点 */
+        .banner ol {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            height: 13px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        .banner ol li {
+            margin: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .banner ol .active {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- 图片 -->
+        <ul>
+            <li><a href="#"><img src="./images/banner1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./images/banner2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./images/banner3.jpg" alt=""></a></li>
+        </ul>
+        <!-- 箭头 -->
+        <!-- 上一张 prev -->
+        <a href="#" class="prev">
+            <span class="iconfont icon-zuoce"></span>
+        </a>
+        <!-- 下一张 next -->
+        <a href="#" class="next">
+            <span class="iconfont icon-youce"></span>
+        </a>
+        <!-- 圆点 -->
+        <ol>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <script>
+        /**
+         * 轮播图功能实现
+         * 
+         * @input 用户点击事件（左右箭头、底部圆点）或自动轮播触发
+         * @process 1. 获取所有需要的DOM元素
+         *          2. 实现图片切换功能
+         *          3. 实现自动轮播
+         *          4. 实现鼠标悬停暂停功能
+         * @output 轮播图切换效果
+         */
+        
+        // 获取所有需要的DOM元素
+        const banner = document.querySelector('.banner');
+        const ul = banner.querySelector('ul');
+        const lis = ul.querySelectorAll('li');
+        const prev = banner.querySelector('.prev');
+        const next = banner.querySelector('.next');
+        const dots = banner.querySelectorAll('ol li');
+        
+        // 当前显示的图片索引
+        let currentIndex = 0;
+        // 图片宽度
+        const imgWidth = 564;
+        // 自动轮播定时器
+        let timer = null;
+        
+        /**
+         * 切换图片函数
+         * @param {number} index - 要切换到的图片索引
+         */
+        function switchImage(index) {
+            // 更新当前索引
+            currentIndex = index;
+            // 移动图片
+            ul.style.transform = `translateX(-${currentIndex * imgWidth}px)`;
+            // 更新圆点状态
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+        
+        // 为左右箭头添加点击事件
+        prev.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentIndex = (currentIndex - 1 + lis.length) % lis.length;
+            switchImage(currentIndex);
+        });
+        
+        next.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentIndex = (currentIndex + 1) % lis.length;
+            switchImage(currentIndex);
+        });
+        
+        // 为底部圆点添加点击事件
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                switchImage(index);
+            });
+        });
+        
+        /**
+         * 自动轮播函数
+         */
+        function startAutoPlay() {
+            timer = setInterval(() => {
+                currentIndex = (currentIndex + 1) % lis.length;
+                switchImage(currentIndex);
+            }, 3000); // 每3秒切换一次
+        }
+        
+        // 启动自动轮播
+        startAutoPlay();
+        
+        // 鼠标悬停时暂停自动轮播
+        banner.addEventListener('mouseenter', () => {
+            clearInterval(timer);
+        });
+        
+        // 鼠标离开时恢复自动轮播
+        banner.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+    </script>
+</body>
+</html>
