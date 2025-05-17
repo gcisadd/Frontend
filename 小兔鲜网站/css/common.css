@@ -71,6 +71,10 @@
 .nav li {
   margin-right: 47px;
 }
+.nav li .active {
+  border-bottom: 2px solid #5EB69C;
+  color: #5EB69C;
+}
 .nav li a {
   padding-bottom: 10px;
   /* background-color: skyblue; */
