@@ -201,6 +201,9 @@
 .help .left a {
   color: #969696;
 }
+.help .left a:hover {
+  color: #5EB69C;
+}
 .help .left .iconfont {
   color: #5EB69C;
 }
@@ -231,4 +234,7 @@
 .copyright p a {
   margin: 0 10px;
   color: #A1A1A1;
+}
+.copyright p a:hover {
+  color: #5EB69C;
 }
