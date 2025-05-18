@@ -88,3 +88,109 @@
 .banner ol li:hover i {
     background-color: #fff;
 }
+/* 新鲜好物 */
+/* 标题 -- 公共样式 */
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 42px;
+    /* background-color: pink; */
+}
+.title .left {
+    display: flex;
+}
+.title .left h3 {
+    margin-right: 35px;
+    font-size: 30px;
+}
+.title .left p {
+    align-self: flex-end;
+    color: #A1A1A1;
+}
+.title .right .more {
+    line-height: 42px;
+    color: #A1A1A1;
+}
+.title .right .more .iconfont {
+    margin-left: 10px;
+}
+.title .right .more:hover {
+    color: #5EB69C;
+}
+/* 好物内容 -- 公共样式 */
+.bd ul {
+    display: flex;
+    justify-content: space-between;
+}
+.bd li {
+    width: 304px;
+    height: 404px;
+    background-color: #EEF9F4;
+}
+.bd li .pic {
+    width: 304px;
+    height: 304px;
+}
+.bd li .txt {
+    text-align: center;
+}
+.bd li h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+.goods .bd p {
+    font-size: 18px;
+    color: #AA2113;
+}
+.goods .bd p span {
+    margin-left: 3px;
+    font-size: 22px;
+}
+/* 人气推荐 */
+.recommend .bd li {
+    background-color: #fff;
+}
+.recommend .bd p {
+    color: #A1A1A1;
+}
+/* 热门品牌 */
+.brand {
+    margin-top: 60px;
+    height: 468px;
+    background-color: #F5F5F5;
+}
+.brand .wrapper {
+    height: 468px;
+    /* background-color: pink; */
+    overflow: hidden;
+}
+.brand .title {
+    position: relative;
+    margin-bottom: 40px;
+}
+.brand .button {
+    /* 让a在一行显示，宽高生效 */
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+}
+.brand .button a {
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #DDD;
+}
+.brand .button a:hover {
+    background-color: #5EB69C;
+}
+.brand .bd li {
+    width: 244px;
+    height: 306px;
+}

@@ -127,6 +127,10 @@
   color: #FFFEFE;
   line-height: 15px;
 }
+.cart:hover {
+  cursor: pointer;
+  color: #5EB69C;
+}
 /* 底部 */
 .footer {
   height: 580px;
