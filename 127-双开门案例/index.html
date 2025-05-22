@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dad {
+            position: relative;
+            margin: 100px auto;
+            width: 1366px;
+            height: 600px;
+            background-image: url(./images/bg.jpg);
+            overflow: hidden;
+        }
+        .son1 {
+            position: absolute;
+            right: 50%;
+            width: 683px;
+            height: 600px;
+            background-image: url(./images/fm.jpg);
+            background-position: left;
+            transition: all 1s;
+        }
+        .son2 {
+            position: absolute;
+            left: 50%;
+            width: 683px;
+            height: 600px;
+            background-image: url(./images/fm.jpg);
+            background-position: right;
+            transition: all 1s;
+        }
+        .dad:hover .son1 {
+            transform: translateX(-100%);
+        }
+        .dad:hover .son2 {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="dad">
+        <div class="son1">
+
+        </div>
+        <div class="son2">
+            
+        </div>
+    </div>
+</body>
+</html>

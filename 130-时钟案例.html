@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS时钟案例</title>
+    <style>
+      /* 时钟外框样式 */
+      .clock {
+        width: 250px;
+        height: 250px;
+        border: 8px solid #000;
+        border-radius: 50%;
+        margin: 100px auto;
+        position: relative;
+      }
+
+      /* 刻度线基础样式 */
+      .line {
+        /* 使用绝对定位将刻度线放置在时钟中心 */
+        position: absolute;
+        width: 4px;
+        height: 250px;
+        background-color: #999;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      /* 刻度线旋转样式
+       * 将时钟等分为12份，每份30度
+       * 使用nth-child选择器分别设置每个刻度线的旋转角度
+       */
+      .line:nth-child(2) {
+        transform: translate(-50%) rotate(30deg);
+      }
+
+      .line:nth-child(3) {
+        transform: translate(-50%) rotate(60deg);
+      }
+
+      .line:nth-child(4) {
+        transform: translate(-50%) rotate(90deg);
+      }
+
+      .line:nth-child(5) {
+        transform: translate(-50%) rotate(120deg);
+      }
+
+      .line:nth-child(6) {
+        transform: translate(-50%) rotate(150deg);
+      }
+
+      /* 12点和6点位置的刻度线加粗 */
+      .line:nth-child(1),
+      .line:nth-child(4) {
+        width: 5px;
+      }
+
+      /* 时钟中心遮罩圆形 */
+      .cover {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+
+      /* 表针基础样式 */
+      .hour,
+      .minute,
+      .second {
+        position: absolute;
+        left: 50%;
+        bottom: 50%; /* 将表针底部固定在中心点 */
+      }
+
+      /* 时针样式 */
+      .hour {
+        width: 6px;
+        height: 50px;
+        background-color: #333;
+        margin-left: -3px;
+        transform-origin: center bottom; /* 设置旋转原点在底部中心 */
+        transition: all 43200s; /* 12小时转一圈，43200秒 */
+      }
+
+      /* 分针样式 */
+      .minute {
+        width: 5px;
+        height: 65px;
+        background-color: #333;
+        margin-left: -3px;
+        transform-origin: center bottom;
+        transition: all 3600s; /* 60分钟转一圈，3600秒 */
+      }
+
+      /* 秒针样式 */
+      .second {
+        width: 4px;
+        height: 80px;
+        background-color: red;
+        margin-left: -2px;
+        transform-origin: center bottom;
+        transition: all 60s; /* 60秒转一圈 */
+      }
+
+      /* 中心螺丝样式 */
+      .dotted {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 18px;
+        height: 18px;
+        background-color: #333;
+        border-radius: 50%;
+      }
+
+      /* 鼠标悬停效果：所有指针旋转360度 */
+      .clock:hover,
+      .clock:hover .hour,
+      .clock:hover .minute,
+      .clock:hover .second {
+        cursor: pointer;
+        transform: rotate(360deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 时钟容器 -->
+    <div class="clock">
+      <!-- 刻度线：6条线，每条旋转30度 -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+      <!-- 中心遮罩 -->
+      <div class="cover"></div>
+      
+      <!-- 表针 -->
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+
+      <!-- 中心螺丝 -->
+      <div class="dotted"></div>
+    </div>
+  </body>
+</html>

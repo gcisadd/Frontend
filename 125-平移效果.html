@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .son {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            transition: all 0.5s;
+        }
+        /* 鼠标移入到父盒子，son改变位置 */
+        .father:hover .son {
+            /* transform: translate(200px, 100px); */
+            /* transform: translate(50%, 100%); */
+            transform: translate(-50%, 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+</html>
