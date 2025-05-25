@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 140px;
+            height: 140px;
+            border: 1px solid #000;
+            background-image: url(./images/bg.png);
+            animation: run .8s steps(12) infinite;
+        }
+        div:hover {
+            cursor: pointer;
+            animation-play-state: paused;
+        }
+        @keyframes run {
+            form {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -1680px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 大背景 */
+/* 默认状态HTML和body的高度是0，所以导致cover缩放背景图不成功 */
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background: url(../images/f1_1.jpg) no-repeat center 0 / cover;
+  /* background-size: cover; */
+}
+/* 鹿 */
+.lu img {
+  position: absolute;
+  left: 52%;
+  top: 15%;
+  animation: lu 1s infinite linear alternate;
+  transform-origin: left bottom;
+}
+/* 云 */
+.cloud img {
+  position: absolute;
+  left: 50%;
+  animation: cloud 1s infinite linear alternate;
+}
+.cloud img:nth-child(1) {
+  margin-left: -200px;
+  margin-top: 30px;
+}
+.cloud img:nth-child(2) {
+  margin-left: 350px;
+  margin-top: 120px;
+  animation-delay: .5s;
+}
+.cloud img:nth-child(3) {
+  margin-left: -500px;
+  margin-top: 210px;
+  animation-delay: 1s;
+}
+/* 热气球 */
+.hotball img {
+  position: absolute;
+  left: 28%;
+  top: 14%;
+  animation: hotball 1s infinite linear alternate;
+}
+/* 文字 */
+.text img {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+}
+.text img:nth-child(1) {
+  margin-left: -490px;
+  animation: text 1s infinite linear alternate;
+}
+.text img:nth-child(2) {
+  margin-left: -215px;
+  animation: text 1s infinite linear alternate;
+}
+.text img:nth-child(3) {
+  margin-left: 60px;
+  animation: text 1s infinite linear alternate;
+}
+.text img:nth-child(4) {
+  margin-left: 335px;
+  animation: text 1s infinite linear alternate;
+}
+/* 标题 */
+.title img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: title 2s infinite linear;
+}
+@keyframes lu {
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+@keyframes cloud {
+  100% {
+    transform: translate(50px);
+  }
+}
+@keyframes hotball {
+  100% {
+    transform: translateY(50px);
+  }
+}
+@keyframes text {
+  100% {
+    transform: translateY(-50px);
+  }
+}
+@keyframes title {
+  33% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  66% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

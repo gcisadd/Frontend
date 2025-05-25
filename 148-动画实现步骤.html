@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            animation: change_one 2s infinite alternate;
+        }
+        .box2 {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            animation: change_two 2s infinite alternate;
+        }
+        /* 动画一：宽度从200变化到800 */
+        @keyframes change_one {
+            from {
+                width: 200px;
+            }
+            to {
+                width: 800px;
+            }
+        }
+        /* 动画二：从200*100变化到300*300变化到800*500 */
+        @keyframes change_two {
+            0% {
+                width: 200px;
+                height: 100px;
+            }
+            50% {
+                width: 300px;
+                height: 300px;
+            }
+            100% {
+                width: 800px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
