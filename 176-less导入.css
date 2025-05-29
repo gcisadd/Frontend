@@ -1,0 +1,13 @@
+.father {
+  color: red;
+}
+.father .son {
+  color: blue;
+}
+.father .son .grandson {
+  color: green;
+}
+.box {
+  name: gcISadd;
+  color: skyblue;
+}

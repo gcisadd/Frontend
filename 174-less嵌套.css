@@ -1,0 +1,9 @@
+.father {
+  color: red;
+}
+.father .son {
+  color: blue;
+}
+.father .son .grandson {
+  color: green;
+}
