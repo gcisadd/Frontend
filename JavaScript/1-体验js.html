@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 100px auto;
+      text-align: center;
+    }
+    button {
+      width: 200px;
+      height: 100px;
+      cursor: pointer;
+    }
+    .active {
+      background-color: orangered;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <button class="active">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+  </div>
+  <script>
+    let bts = document.querySelectorAll('button')
+    console.log(bts)
+    for(let i = 0; i<bts.length; i++) {
+      bts[i].addEventListener('click', function() {
+        document.querySelector('.active').className = ''
+        this.className = 'active'
+      })
+    }
+  </script>
+</body>
+</html>

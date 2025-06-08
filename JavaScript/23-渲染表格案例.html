@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+      margin: 100px auto 40px;
+      text-align: center;
+    }
+    table {
+      margin: 0 auto;
+      border: 1px solid black;
+      border-collapse: collapse;
+      height: 80px;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px 30px;
+      height: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>订单付款确认页面</h2>
+  
+  <script>
+    let productName = `华为 Mate 70 Pro`
+    let perPrice = 6999
+    let productNumber = +prompt(`请输入购买${productName}的数量`)
+    let totalPrice = perPrice * productNumber
+    let address = prompt(`请输入收货地址`)
+    document.write(`
+      <table>
+        <thead>
+          <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收货地址</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>${productName}</td>
+            <td>${perPrice}元</td>
+            <td>${productNumber}</td>
+            <td>${totalPrice}元</td>
+            <td>${address}</td>
+          </tr>
+        </tbody>
+      </table>
+    `)
+  </script>
+</body>
+</html>
