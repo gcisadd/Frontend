@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse; /* 使用边框合并 */
+      width: 100%; /* 设置表格宽度 */
+    }
+    td {
+      padding: 2px;
+      width: 80px; /* 设置单元格宽度 */
+      height: 40px; /* 设置单元格高度 */
+      line-height: 40px; /* 垂直居中 */
+      text-align: center; /* 水平居中 */
+      border: 1px solid #000; /* 设置边框 */
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // let evenSum = 0
+    // for (let i = 1; i <= 100; i++) {
+    //   document.write(`${i}岁<br>`)
+    //   if (i % 2 === 0) {
+    //     evenSum += i
+    //   }
+    // }
+    // alert(`偶数和为${evenSum}`)
+    // document.write(`*****`)
+    // let arr = ['刘德华', '张学友', '郭富城', '黎明', 'add']
+    // for (let i = 0; i < arr.length; i++) {
+    //   if (arr[i] === 'add') {
+    //     break
+    //   }
+    //   document.write(`${arr[i]}<br>`)
+    // }
+    // for (let i = 0; i < 5; i++) {
+    //   document.write(`第${i + 1}天<br>`)
+    //   for (let j = 0; j < 10; j++) {
+    //     document.write(`记了${j + 1}个单词<br>`)
+    //   }
+    //   document.write(`<br>`)
+    // }
+    // for (let i = 1; i <= 5; i++) {
+    //   for (let j = 1; j <= 5; j++) {
+    //     document.write(`*`)
+    //   }
+    //   document.write(`<br>`)
+    // }
+
+    while (true) {
+      let n = +prompt(`请输入一个正数`)
+      if ( n > 0 ) {
+        document.write('<table>'); // 开始表格
+        for (let i = 1; i <= n; i++) {
+          document.write('<tr>'); // 开始行
+          for (let j = 1; j <= i; j++) {
+            document.write(`<td>${j}x${i}=${i * j}</td>`); // 添加单元格
+          }
+          document.write('</tr>'); // 结束行
+        }
+        document.write('</table>'); // 结束表格
+        break
+      }
+    }
+  </script>
+</body>
+</html>
