@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      name : 'add',
+      age : 21,
+      sayHello : function() {
+        console.log('hello')
+      },
+      whoIsAdd : function() {
+        document.write('gc is add')
+      }
+    }
+    // console.log(obj)
+    // obj.sayHello()
+    // obj.hobby = 'coding'
+    // console.log(obj)
+    // obj.length = 18
+    // console.log(obj)
+    // obj.length = 19
+    // console.log(obj)
+    // delete obj.length
+    // console.log(obj)
+    // for(let i in obj) {
+    //   console.log(i, obj[i])
+    // }
+    // obj.whoIsAdd()
+    // let arr = [1, 2, 3, 4, 5]
+    // for( let i in arr) {
+    //   console.log(i, arr[i])
+    // }
+    let arr = [
+      {name: '张三', age: 18, gender: '男'},
+      {name: '李四', age: 20, gender: '女'},
+      {name: '王五', age: 22, gender: '男'},
+    ]
+    for(let i = 0; i < arr.length; i++) {
+      for(let key in arr[i]) {
+        document.write(`${key}: ${arr[i][key]} &nbsp;&nbsp;`)
+      }
+      document.write('<br>')
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getRandomNumber(a, b) {
+      return Math.floor(Math.random() * (b - a + 1) + a)
+    }
+    function getHexColor() {
+      let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']
+      let color = '#'
+      for(let i = 0; i < 6; i++) {
+        let index = getRandomNumber(0, 15)
+        color += arr[index]
+      }
+      return color
+    }
+    function getRgbColor() {
+      let color = 'rgb('
+      for(let i = 0; i < 3; i++) {
+        if(i === 2) {
+          let index = getRandomNumber(0, 255)
+          color += index
+        } else {
+          let index = getRandomNumber(0, 255) + ','
+          color += index
+        }
+      }
+      return color + ')'
+    }
+    function getRandomColor(flag = true) {
+      if(flag) {
+        return getHexColor()
+      } else {
+        return getRgbColor()
+      }
+    }
+    let hexColor = getRandomColor(true)
+    let rgbColor = getRandomColor(false)
+    document.write(`${hexColor}`)
+    document.write(`<br>`)
+    document.write(`${rgbColor}`)
+    document.write(`<div class="box" style="display: flex; justify-content: space-around;">`)
+    document.write(`<div class="hex-color" style="width: 100px; height: 100px; background-color: ${hexColor};"></div>`)
+    document.write(`<div class="rgb-color" style="width: 100px; height: 100px; background-color: ${rgbColor};"></div>`)
+    document.write(`</div>`)
+  </script>
+</body>
+</html>
