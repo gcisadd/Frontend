@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let num = 10
+    function fn() {
+      let num = 20
+      console.log(num)
+      console.log(this.num) // undefined
+    }
+    fn()
+  </script>
+</body>
+</html>
