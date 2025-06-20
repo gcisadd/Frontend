@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="box">0</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul> -->
+  <ul class="nav">
+    <li>我的首页</li>
+    <li>产品介绍</li>
+    <li>联系方式</li>
+  </ul>
+  <script>
+    // const box = document.querySelector('div')
+    // console.dir(box)
+    // const li = document.querySelector('ul>li:nth-child(2)')
+    // console.dir(li)
+    const lis = document.querySelectorAll('.nav>li')
+    for(let i = 0; i < lis.length; i++) {
+      console.dir(lis[i])
+      lis[i].style.color = 'red'
+    }
+  </script>
+</body>
+</html>

@@ -65,18 +65,18 @@
                             num: 590
                         },
                     ]
-                    for(let i = 0; i < data.length; i++) {
-                        document.write(`<li>`)
-                            document.write(`<a href="#">`)
-                                document.write(`<img src="${data[i].src}" alt="">`)
-                                    document.write(`<h4>`)
-                                document.write(`${data[i].title}`)
-                                document.write(`</h4>`)
-                                document.write(`<div class="info">`)
-                                    document.write(`<span>高级</span> • <span>${data[i].num}</span>人在学习`)
-                                document.write(`</div>`)
-                            document.write(`</a>`)
-                        document.write(`</li>`)
+                    for (let i = 0; i < data.length; i++) {
+                        document.write(`
+                            <li>
+                                <a href="#">
+                                    <img src="${data[i].src}" alt="">
+                                    <h4>${data[i].title}</h4>
+                                    <div class="info">
+                                        <span>高级</span> • <span>${data[i].num}</span>人在学习
+                                    </div>
+                                </a>
+                            </li>
+                        `);
                     }
                 </script>
             </ul>

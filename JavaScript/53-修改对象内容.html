@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="box" onclick="changeText()">
+    我是文字内容
+  </button>
+  <script>
+    function changeText() {
+      const box = document.querySelector('.box')
+      box.innerText = '修改我干嘛'
+      alert('敢动我？')
+      return false
+    }
+  </script>
+</body>
+</html>

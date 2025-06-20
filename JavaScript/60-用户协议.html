@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bt {
+      display: block;
+      margin: 88px auto;
+      width: 200px;
+      height: 50px;
+      background-color: #939dd7;
+      border-radius: 25px;
+    }
+    .hover {
+      cursor: pointer;
+      background-color: #919cdc;
+    }
+  </style>
+</head>
+<body>
+  <button class="bt" disabled>请先阅读用户协议 (5s)</button>
+  <script>
+    let count = 5
+    function countDown() {
+      count--
+      button.innerHTML = (`请先阅读用户协议 (${count}s)`)
+      if (count === 0) {
+        button.disabled = false
+        button.innerHTML = (`我已同意用户协议`)
+        clearInterval(index)
+        button.classList.add('hover')
+      }
+    }
+    let index = setInterval(countDown, 1000)
+    let button = document.querySelector('.bt')
+    button.addEventListener('click', function() {
+      alert('用户协议已阅读')
+    })
+    
+  </script>
+</body>
+</html>

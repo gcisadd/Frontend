@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function log() {
+      document.write(`<h3>gcISadd</h3>`)
+    }
+    let index1 = setInterval(log, 1000)
+    console.log(index1)
+    // let index2 = setInterval(log(), 1000)
+    // console.log(index2)
+    // let index3 = setInterval(function(){ document.write(`<h3>gcISadd</h3>`) }, 1000)
+    // console.log(index3)
+    clearInterval(index1)
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    input {
+      margin: 50px 20px;
+      width: 300px;
+      height: 50px;
+      border: 1px solid #ccc;
+      background-color: #e5e5e5;
+      border-radius: 5px;
+      padding: 0 10px;
+    }
+    input:hover {
+      background-color: #f5f5f5;
+    }
+    button {
+      width: 100px;
+      height: 50px;
+      border: 1px solid #ccc;
+      background-color: #e5e5e5;
+      border-radius: 5px;
+      padding: 0 10px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <input class="input" type="password" placeholder="请输入内容">
+  <button class="button" onClick="showPassword()">显示密码</button>
+  <script>
+    function showPassword() {
+      let input = document.querySelector('.input')
+      let button = document.querySelector('.button')
+      let password = input.value
+      console.log('password', password)
+      if (input.type === 'password') {
+        input.type = 'text'
+        button.innerText = '隐藏密码'
+      } else {
+        input.type = 'password'
+        button.innerText = '显示密码'
+      }
+    }
+  </script>
+</body>
+</html>
