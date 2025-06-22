@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    input {
+      display: block;
+      margin: 20px;
+      padding: 0 10px;
+      width: 200px;
+      height: 20px;
+      transition: all .5s;
+    }
+    input:focus {
+      width: 400px;
+    }
+    button {
+      display: block;
+      margin: 20px;
+      padding: 0 10px;
+      width: 80px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" placeholder="请输入内容...">
+  <button>(0/50)</button>
+  <script>
+    const input = document.querySelector('[type = text]')
+    const button = document.querySelector('button')
+    input.addEventListener('input', function() {
+      if(input.value.length >= 50) {
+        input.value = input.value.slice(0,50);
+        button.innerHTML = `(${input.value.length}/50)`
+        return
+      }
+      console.log(input.value)
+      button.innerHTML = `(${input.value.length}/50)`
+    })
+  </script>
+</body>
+</html>

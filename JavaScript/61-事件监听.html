@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 100px auto;
+      width: 100px;
+      height: 50px;
+      background-color: skyblue;
+      opacity: 90%;
+      border-radius: 5px;
+    }
+    button:hover {
+      opacity: 100%;
+    }
+  </style>
+</head>
+<body>
+  <button>click</button>
+  <input type="text">
+  <script>
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', function() {alert('点击按钮')})
+    // btn.addEventListener('mouseover', function() {alert('覆盖按钮')})
+    const input = document.querySelector('input')
+    input.addEventListener('focus', function() {
+      console.log(focus)
+    })
+    input.addEventListener('blur', function() {
+      console.log(blur)
+    })
+    input.addEventListener('keydown', function() {
+      console.log('keydown')
+    })
+    input.addEventListener('keyup', function() {
+      console.log('keyup')
+    })
+  </script>
+</body>
+</html>

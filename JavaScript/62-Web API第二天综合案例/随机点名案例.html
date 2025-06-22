@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+            width: 450px;
+            height: 40px;
+            color: red;
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+
+        .btns button:disabled {
+            background-color: #ccc; /* 禁用状态的样式 */
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end" disabled>结束</button>
+    </div>
+
+    <script>
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞'];
+        const qs = document.querySelector('.qs');
+        const start = document.querySelector('.start');
+        const end = document.querySelector('.end');
+        let index, selectIndex;
+
+        function getRandomNumber() {
+            return Math.floor(Math.random() * arr.length);
+        }
+
+        function startSelect() {
+            if (arr.length === 0) {
+                alert("没有可点名的名字了！");
+                return;
+            }
+            start.disabled = true;
+            end.disabled = false;
+            qs.innerHTML = "正在点名..."; // 提示信息
+            index = setInterval(function() {
+                selectIndex = getRandomNumber();
+                qs.innerHTML = arr[selectIndex];
+            }, 50);
+        }
+
+        function endSelect() {
+            clearInterval(index);
+            start.disabled = false;
+            end.disabled = true;
+            alert(`最后选中的名字是：${arr[selectIndex]}`); // 弹出提示
+            arr.splice(selectIndex, 1);
+            if (arr.length === 0) {
+                qs.innerHTML = "没有可点名的名字了！"; // 提示没有名字
+            }
+        }
+
+        start.addEventListener('click', startSelect);
+        end.addEventListener('click', endSelect);
+    </script>
+</body>
+
+</html>
