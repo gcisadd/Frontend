@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>第1个li</li>
+    <li>第2个li</li>
+    <li>第3个li</li>
+    <li>第4个li</li>
+    <li>第5个li</li>
+    <p>放个p在这里</p>
+  </ul>
+  <script>
+    // 点击每个li，颜色变为skyblue
+    const ul = document.querySelector('ul');
+    ul.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'skyblue';
+      }
+    })
+  </script>
+</body>
+</html>

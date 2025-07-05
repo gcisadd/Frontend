@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid + Flex 实现</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 60px 1fr;
+        }
+        header {
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 3fr 7fr;
+            height: 100%;
+        }
+        .sidebar {
+            background-color: #e0e0e0;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>标题区域</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <p>侧边栏内容</p>
+        </div>
+        <div class="content">
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+            <p>主内容区域</p>
+        </div>
+    </div>
+</body>
+</html>
