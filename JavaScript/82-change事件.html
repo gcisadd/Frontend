@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <script>
+    const input = document.querySelector('input')
+    input.addEventListener('change', function (e) {
+      console.log("change事件触发", e.target.value)
+    })
+  </script>
+</body>
+</html>

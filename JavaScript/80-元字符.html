@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <textarea></textarea>
+  <button>提交</button>
+  <div></div>
+  <script>
+    const textarea = document.querySelector('textarea')
+    const button = document.querySelector('button')
+    const div = document.querySelector('div')
+    button.addEventListener('click', function () {
+      div.innerHTML = textarea.value.replace(/激情|基情/g, '**')
+      textarea.value = ''
+    })
+  </script>
+</body>
+</html>
